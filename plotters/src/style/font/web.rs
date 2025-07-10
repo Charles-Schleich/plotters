@@ -43,4 +43,14 @@ impl FontData for FontDataInternal {
         elem.remove();
         Ok(((0, 0), (width, height)))
     }
+
+    fn draw<E, DrawFunc: FnMut(i32, i32, f32) -> Result<(), E>>(
+        &self,
+        _pos: (i32, i32),
+        _size: f64,
+        _text: &str,
+        _draw: DrawFunc,
+    ) -> Result<Result<(), E>, Self::ErrorType> {
+        Ok(Ok(()))
+    }
 }

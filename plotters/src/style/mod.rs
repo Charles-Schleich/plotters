@@ -18,7 +18,7 @@ pub use colors::{BLACK, BLUE, CYAN, GREEN, MAGENTA, RED, TRANSPARENT, WHITE, YEL
 #[cfg_attr(doc_cfg, doc(cfg(feature = "full_palette")))]
 pub use colors::full_palette;
 
-#[cfg(all(not(target_arch = "wasm32"), feature = "ab_glyph"))]
+#[cfg(all(feature = "ab_glyph"))]
 pub use font::register_font;
 pub use font::{
     FontDesc, FontError, FontFamily, FontResult, FontStyle, FontTransform, IntoFont, LayoutBox,
