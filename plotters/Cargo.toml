@@ -23,6 +23,7 @@ chrono = { version = "0.4.32", optional = true }
 serde = { version = "1.0.139", optional = true }
 ab_glyph = { version = "0.2.12", optional = true , features = ["libm"]}
 once_cell = { version = "1.8.0", optional = true }
+log = { version = "0.4.27" }
 
 [dependencies.plotters-backend]
 version = "0.3.6"

@@ -5,6 +5,7 @@ use once_cell::sync::Lazy;
 use std::collections::HashMap;
 use std::error::Error;
 use std::sync::RwLock;
+use log::{info};
 
 struct FontMap {
     map: HashMap<String, FontRef<'static>>,
@@ -126,6 +127,8 @@ impl FontData for FontDataInternal {
         text: &str,
         mut draw: DrawFunc,
     ) -> Result<Result<(), E>, Self::ErrorType> {
+        info!("Test");
+
         let font = self.font_ref.as_scaled(size as f32);
         let mut draw = |x: i32, y: i32, c| {
             let (base_x, base_y) = pos;
@@ -155,6 +158,8 @@ impl FontData for FontDataInternal {
             }
             x_shift += font.h_advance(font.glyph_id(c));
         }
+
+        info!("gets to okay");
         Ok(Ok(()))
     }
 }
